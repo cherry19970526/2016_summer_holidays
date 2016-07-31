@@ -1,0 +1,39 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class product
+{
+char* tag; 
+double price; 
+int quantity; 
+public:
+product(char *name,double p,int q)
+{
+       tag=new char[strlen(name)+1];
+       strcpy(tag,name);
+       price=p;
+       quantity=q;
+}
+~product()
+{
+       delete []tag;
+}
+double buy(int num)
+{
+       if(num>quantity)
+              return 0;
+       quantity-=num;
+       return  quantity*num;
+}
+void print()
+{
+        cout<<tag<<" "<<price<<" "<<quantity<<endl;
+}
+};
+int main()
+{
+    product p("q",6,9);
+    p.print();
+    cout<<p.buy(10)<<endl;
+    return 0;
+}
