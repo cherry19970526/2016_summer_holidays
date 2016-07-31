@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Address
+{
+     string name,address,city,mail;
+     public:
+     Address(string n="",string a="",string c="",string m="")
+     {
+       name=n;
+       address=a;
+       city=c;
+       mail=m;
+     }
+     ~Address()
+     {}
+      void ChangeName()
+      {
+        int temp;
+        string temp2;
+        cout<<"请问你要修改哪个属性？"<<endl;
+        cout<<"1.name 2.address 3.city 4.mail"<<endl;
+        cout<<"输入编号即可:"<<endl;
+        cin>>temp;
+        cout<<"输入修改内容:"<<endl;
+        cin>>temp2;
+        if(temp==1)
+            name=temp2;
+        else
+        if(temp==2)
+            address=temp2;
+        else
+        if(temp==3)
+            city=temp2;
+        else
+            mail=temp2;
+        cout<<"修改成功"<<endl;
+      }
+    void print()
+    {
+        cout<<name<<" "<<address<<" "<<city<<" "<<mail<<endl;
+    }
+};
+int main()
+{
+    Address Address1("lwl","tx","sh","110");
+    Address1.ChangeName();
+    Address1.print();
+    return 0;
+}
