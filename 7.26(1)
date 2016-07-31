@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class sjx
+{
+    double a,b,c;
+public:
+       sjx(double m=0,double l=0,double n=0)
+       {
+        a=m;
+        b=l;
+        c=n;
+       }
+       ~sjx(){}
+       bool sf()
+       {
+              if(a+b>c&&a+c>b&&b+c>a)
+                     return 1;
+              else
+                     return 0;
+
+       }
+       bool zj()
+       {
+              if(a*a+b*b==c*c||a*a+c*c==b*b||b*b+c*c==a*a)
+                     return 1;
+              else
+                     return 0;
+       }
+       double area()
+       {
+        double p=(a+b+c)/2;
+        return sqrt(p*(p-c)*(p-b)*(p-a));
+       }
+};
+int main()
+{
+    sjx k(3,4,5);
+    cout<<k.sf()<<endl;
+    cout<<k.zj()<<endl;
+    cout<<k.area()<<endl;
+    return 0;
+}
